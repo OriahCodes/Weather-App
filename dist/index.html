@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather App</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css"/>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+    <div id="app-container">
+        <input id="city-input" placeholder="Enter City Name"/>
+        <i class="fas fa-search" id="search-city-btn"></i>
+
+        <div id="weather-results"></div>
+    </div>
+    
+
+    <script type="text/x-handlebars-template" id="weather-template">
+        {{#each allCityData}}
+        <div class="city">
+
+            {{#if saved}}
+                <i class="fas fa-plus-circle save-city" onclick="saveCity(this)" style="display:none;"></i>
+                <i class="fas fa-minus-circle delete-city" onclick="deleteCity(this)" style="display:block;"></i>
+            {{else}}
+                <i class="fas fa-plus-circle save-city" onclick="saveCity(this)"></i>
+                <i class="fas fa-minus-circle delete-city" onclick="deleteCity(this)"></i>
+            {{/if}}
+
+            <div class="name">{{cityName}}</div>
+            <div class="temperature">{{temp}}&#176</div>
+            <div class="description">{{description}}</div>
+            <img src="{{icon}}" class="icon"/>
+        </div>
+        {{/each}}
+    </script>
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="handlebars/dist/handlebars.js"></script>
+
+    <script src="renderer.js"></script>
+    <script src="tempManager.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

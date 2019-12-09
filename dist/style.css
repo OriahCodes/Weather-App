@@ -1,0 +1,70 @@
+*{
+    background-color: #96b4e4;
+    font-family: 'Raleway', sans-serif;
+    color:white;
+}
+
+#app-container{
+    padding: 30px;
+}
+
+#city-input{
+    border-width: 0px;
+    border-bottom: 2px solid white;
+    font-size: 6vw;
+    color: white;
+}
+
+#search-city-btn{
+    color: white;
+    padding: 2vw;
+    font-size: 5vw;
+}
+
+.city{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas: 
+    "m t i"
+    "m n d";
+    grid-gap: 2vw;
+    padding: 2vw;
+    box-shadow: 1px 2px rgb(86, 88, 211);
+    margin-top: 3vh;
+}
+
+.city > .save-city {
+    display: block;
+    margin: auto 0;
+    grid-area: m;
+    font-size: 5.5vw;
+    color: #c0392b;
+}
+
+.city > .delete-city {
+    display: none;
+    margin: auto 0;
+    grid-area: m;
+    font-size: 5.5vw;
+    color: #6D214F;
+}
+
+.city > .name {
+    grid-area: n;
+    font-size: 4vw;
+}
+
+.city> .temperature {
+    grid-area: t;
+    font-size: 10vw;
+}
+
+.city > .description {
+    grid-area: d;
+    font-size: 4vw;
+}
+
+.city > .icon {
+    grid-area: i;
+    width: 15vw;
+}
